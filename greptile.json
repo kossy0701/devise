@@ -1,22 +1,62 @@
 {
-  "commentTypes": ["logic", "syntax"],
+  "labels": [],
+  "comment": "※このコメントは Greptile による自動コードレビューです。",
+  "fixWithAI": true,
   "strictness": 2,
-  "instructions": "すべてのレビューコメントとPRサマリは日本語（です・ます調）で書いてください。コードやクラス名・メソッド名などの識別子は英語のままで構いません。冗長な説明は避け、具体的な修正提案やサンプルコードを短く提示してください。Rails / Devise の一般的なベストプラクティスに従ってレビューしてください。",
-  "ignorePatterns": "greptile.json\n*.md\n*.txt\n*.png\n*.jpg\n*.jpeg\n*.svg\n**/docs/**\n**/node_modules/**\n**/vendor/**\n",
-  "triggerOnUpdates": true,
+  "commentTypes": [
+    "logic"
+  ],
+  "instructions": "レビュー方針:\n\n- レビューコメントとサマリは日本語（です・ます調）で出力してください。\n- セキュリティリスク（SQLインジェクション、XSS、認可不備、機密情報の漏洩など）を最優先で確認してください。\n- 潜在的なバグ（型の不一致、エッジケース、エラーハンドリング不足など）を重点的にチェックしてください。\n- 可能な範囲でアーキテクチャとの整合性（既存パターンとの一貫性、設計原則への準拠）も評価してください。\n- 重大なパフォーマンス問題（N+1クエリ、明らかに非効率なアルゴリズムなど）があれば指摘してください。\n- 重要なロジックのテストが十分かどうかを確認し、不足していれば具体的なテスト追加案を提案してください。\n- コードの可読性（命名、複雑度、コメントの必要性）について、必要な場合のみ助言してください。スタイルだけの指摘は最小限にしてください。\n- 重大または警告レベルの指摘については、必ず「何が問題か」「なぜ問題か」「どう修正すべきか」の3点を含めてください。「どう修正すべきか」では、可能な限り具体的な修正方針とRubyコードのサンプル（GitHubのsuggestion形式のコードブロック）を、対象の差分行に紐づくコメントとして提示してください。\n\nレビューのトーン:\n\n- 建設的で具体的な改善提案を心がけてください。\n- 問題の重要度を明確に示してください（例: 🚨 重大、⚠️ 警告、💡 提案）。\n- 良い実装や改善点があれば、肯定的なフィードバックも含めてください。\n",
+  "disabledLabels": [],
+  "excludeAuthors": [],
+  "ignoreKeywords": "",
+  "includeAuthors": [],
+  "summarySection": {
+    "included": true,
+    "collapsible": false,
+    "defaultOpen": false
+  },
+  "excludeBranches": [],
+  "includeBranches": [],
+  "includeKeywords": "",
+  "updateSummaryOnly": false,
+  "issuesTableSection": {
+    "included": true,
+    "collapsible": false,
+    "defaultOpen": false
+  },
+  "confidenceScoreSection": {
+    "included": true,
+    "collapsible": false,
+    "defaultOpen": false
+  },
+  "sequenceDiagramSection": {
+    "included": true,
+    "collapsible": false,
+    "defaultOpen": false
+  },
   "shouldUpdateDescription": false,
-  "statusCheck": false,
-  "fixWithAI": false,
-  "comment": "※このレビューは Greptile による自動コードレビューです。",
+  "updateExistingSummaryComment": false,
+  "ignorePatterns": "greptile.json\n",
   "customContext": {
-    "rules": [],
-    "files": [],
     "other": [
       {
-        "scope": ["**/*.rb"],
-        "content": "このリポジトリは Ruby on Rails / Devise のコードを含みます。認証・セッション管理・パスワードリセット、セッション固定化、ブルートフォース対策などセキュリティに関わる変更については、特に慎重にレビューしてください。"
+        "scope": [],
+        "content": ""
+      }
+    ],
+    "rules": [
+      {
+        "scope": [],
+        "rule": ""
+      }
+    ],
+    "files": [
+      {
+        "scope": [],
+        "path": "",
+        "description": ""
       }
     ]
   }
 }
-
