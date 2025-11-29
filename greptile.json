@@ -1,0 +1,22 @@
+{
+  "commentTypes": ["logic", "syntax"],
+  "strictness": 2,
+  "instructions": "すべてのレビューコメントとPRサマリは日本語（です・ます調）で書いてください。コードやクラス名・メソッド名などの識別子は英語のままで構いません。冗長な説明は避け、具体的な修正提案やサンプルコードを短く提示してください。Rails / Devise の一般的なベストプラクティスに従ってレビューしてください。",
+  "ignorePatterns": "greptile.json\n*.md\n*.txt\n*.png\n*.jpg\n*.jpeg\n*.svg\n**/docs/**\n**/node_modules/**\n**/vendor/**\n",
+  "triggerOnUpdates": true,
+  "shouldUpdateDescription": false,
+  "statusCheck": false,
+  "fixWithAI": false,
+  "comment": "※このレビューは Greptile による自動コードレビューです。",
+  "customContext": {
+    "rules": [],
+    "files": [],
+    "other": [
+      {
+        "scope": ["**/*.rb"],
+        "content": "このリポジトリは Ruby on Rails / Devise のコードを含みます。認証・セッション管理・パスワードリセット、セッション固定化、ブルートフォース対策などセキュリティに関わる変更については、特に慎重にレビューしてください。"
+      }
+    ]
+  }
+}
+
